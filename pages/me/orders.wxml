@@ -1,0 +1,73 @@
+<!--orders.wxml-->
+<view class="swiper-tab">
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">待付款</view>  
+    <view class="swiper-tab-list {{currentTab==1? 'on' : ''}}" data-current="1" bindtap="swichNav">待发货</view>
+    <view class="swiper-tab-list {{currentTab==2? 'on' : ''}}" data-current="2" bindtap="swichNav">待收货</view>
+    <view class="swiper-tab-list {{currentTab==3? 'on' : ''}}" data-current="3" bindtap="swichNav">待评价</view>
+</view>
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">  
+     
+    <swiper-item>  
+      <view wx:if="{{currentTab==0}}"><scroll-view class="scroll" scroll-y="true">
+    
+    <view wx:for="{{orderlist}}" wx:key>
+    <view class="column" bindtouchstart="mytouchstart" bindtouchend="mytouchend" bindtap="toanorder" data-conid="{{item.conid}}" data-orderid="{{item.orderid}}" data-total="{{item.totalprice}}">
+    <text>订单编号：{{item.orderid}}</text>
+    <view class="row">
+    <text>总价：{{item.totalprice}}</text>
+    <text>时间：{{item.orderdate}}</text>
+    </view>
+    </view>
+      <view class="seperate"></view>
+    </view>
+  </scroll-view></view>  
+    </swiper-item>  
+    
+    <swiper-item>  
+      <view wx:if="{{currentTab==1}}"><scroll-view class="scroll" scroll-y="true">
+    
+    <view wx:for="{{waitsendorderilist}}" wx:key>
+    <view class="column" bindtouchstart="mytouchstart" bindtouchend="mytouchend" bindtap="toanorder" data-conid="{{item.conid}}" data-orderid="{{item.orderid}}" data-total="{{item.totalprice}}">
+    <text>订单编号：{{item.orderid}}</text>
+    <view class="row">
+    <text>总价：{{item.totalprice}}</text>
+    <text>时间：{{item.orderdate}}</text>
+    </view>
+    </view>
+      <view class="seperate"></view>
+    </view>
+  </scroll-view></view>  
+    </swiper-item>  
+    
+    <swiper-item>  
+      <view wx:if="{{currentTab==2}}"><scroll-view class="scroll" scroll-y="true">
+    
+    <view wx:for="{{ waitreceiveorderlist}}" wx:key>
+    <view class="column" bindtouchstart="mytouchstart" bindtouchend="mytouchend" bindtap="toanorder" data-conid="{{item.conid}}" data-orderid="{{item.orderid}}" data-total="{{item.totalprice}}">
+    <text>订单编号：{{item.orderid}}</text>
+    <view class="row">
+    <text>总价：{{item.totalprice}}</text>
+    <text>时间：{{item.orderdate}}</text>
+    </view>
+    </view>
+      <view class="seperate"></view>
+    </view>
+  </scroll-view></view>  
+    </swiper-item>  
+    
+     <swiper-item>  
+       <view wx:if="{{currentTab==3}}"><scroll-view class="scroll" scroll-y="true">
+    
+    <view wx:for="{{waitcommentorderlist}}" wx:key>
+    <view class="column" bindtouchstart="mytouchstart" bindtouchend="mytouchend" bindtap="toanorder" data-conid="{{item.conid}}" data-orderid="{{item.orderid}}" data-total="{{item.totalprice}}">
+    <text>订单编号：{{item.orderid}}</text>
+    <view class="row">
+    <text>总价：{{item.totalprice}}</text>
+    <text>时间：{{item.orderdate}}</text>
+    </view>
+    </view>
+      <view class="seperate"></view>
+    </view>
+  </scroll-view></view>  
+    </swiper-item>  
+</swiper>  

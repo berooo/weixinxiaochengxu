@@ -1,0 +1,20 @@
+<!--comment.wxml-->
+<view class="main-wrap">
+        <view class="main-title">
+            <image src = "../../Images/comment.png" />
+            <text>用户评论</text>
+        </view>
+        <block wx:for="{{commentlist}}">
+            <navigator class="shop-list" url='/pages/layout/detailList?id={{item.id}}&latitude={{item.latitude}}&longitude={{item.longitude}}'>
+                <view>
+                    <view class="shop-img">
+                        <image src="../../Images/user.png"/>
+                    </view>
+                    <view class="shop-right">
+                        <view class="now-title">用户编号：{{item.userid}}</view>
+                        <view class="evaluate">{{item.comment}}</view>
+                    </view>
+                </view>
+            </navigator>
+        </block>
+    </view>

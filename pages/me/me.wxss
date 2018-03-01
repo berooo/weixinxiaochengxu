@@ -1,0 +1,94 @@
+/* me.wxss */
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  padding: 50rpx 0;
+  align-items: center;
+  background: #FFE4E1;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+.userinfo-nickname {
+font-family: '微软雅黑';
+}
+.micon {
+  position: relative;
+  font-family: '微软雅黑';
+ top:15rpx;
+ left: 550rpx;
+ height: 100%;
+ color: #FF7256;
+}
+.order {
+  background-color: white;
+  padding:0 20rpx;
+  text-align: left;
+  height:78rpx;
+  line-height:78rpx;
+  font-size: 30rpx;
+}
+
+.orderText {
+  height: 100%;
+  border-bottom: 1rpx solid silver;  
+}
+.plate-info-left{
+  font-family: '微软雅黑';
+}
+.plate-info-right{
+  position: absolute;
+  font-size: 28rpx;
+  right: 5rpx;
+  color: #A1A1A1;
+  font-weight: lighter;
+}
+.plate{
+  height: 105px;
+  background: #fff;
+  border-bottom: 1rpx solid silver;  
+}
+.plate-item{
+  display: flex;
+  float:left;
+  position: relative;
+  width: 140rpx;
+  height:180rpx;
+  margin-top:38rpx; 
+  margin-left:42rpx;
+}
+.plate-img image{
+  width: 100rpx;
+  height: 100rpx;
+}
+.plate-info{
+  position: absolute;
+  height:40rpx;
+  font-size: 30rpx;
+  font-family: '微软雅黑';
+  bottom: 45rpx;
+  left:8rpx;
+}
+.mylist {
+  background-color: white;
+  height: 80rpx;
+   border-bottom: 1rpx solid silver;  
+}
+.list_top{
+  margin-bottom: 20rpx;
+}
+.list-item{
+    position: relative;
+  height:40rpx;
+  font-size: 35rpx;
+  font-family: '华文细黑';
+  top:15rpx;
+  left:30rpx;
+}
+.list-img{
+  right: 5rpx;
+}

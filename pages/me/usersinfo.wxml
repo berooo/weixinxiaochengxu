@@ -1,0 +1,24 @@
+<!--usersinfo.wxml-->
+<view class="mine_head">
+<view class="list_top">
+<navigator url="../collections/collections">
+<view class="mylist top-border">
+  <text class="list-item">我的昵称</text>
+  <text class="content">{{userInfo.nickName}}</text>
+</view>
+</navigator>
+<navigator url="../setPassword/setPassword">
+<view class="mylist bottom-border top-border">
+  <text class="list-item">修改密码</text>
+  
+</view>
+</navigator>
+</view>
+<view class="list_top">
+<navigator url="../regist/regist">
+<view class="mylist bottom-border top-border">
+  <text class="list-item">绑定手机号</text>
+</view>
+</navigator>
+</view>
+</view>

@@ -1,0 +1,112 @@
+<!--index.wxml-->
+<!--最新内容-->
+  <view class="search-bar">
+     <view class="search-bar_form">
+                <view class="search-bar_box">
+                <!--搜索icon + input + 叉叉icon -->
+                    <icon class="icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" class="search-bar_input" placeholder="搜索"
+                           value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+                    <view class="icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                        <icon type="clear" size="14"></icon>
+                    </view>
+                </view>
+                <!--focus时 搜索icon-->
+                <label class="search-bar_label" hidden="{{inputShowed}}" bindtap="showInput">
+                    <icon class="icon-search" type="search" size="14"></icon>
+                    <view class="search-bar_text">搜索</view>
+                </label>
+            </view>
+            <!--取消按钮-->
+    <view class="search-bar_cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+  
+    
+  </view>
+    <view class="searchbar-result" style="overflow-y: scroll;">
+          <view class="weui-cells" wx:if="{{inputVal.length > 0}}" style="overflow-y: scroll;" >
+          <block wx:for="{{searchResult}}" wx:key="item" style="overflow-y: scroll;">
+             <navigator url="../product/product" data-productid="{{item.productid}}" data-productname="{{item.productname}}" 
+          data-picture="{{item.picture}}" data-sales="{{item.sales}}" data-volumn="{{item.volumn}}" data-price="{{item.price}}"
+            data-detail="{{item.detail}}"data-shippingprice="{{item.shippingprice}}" open-type="switchTab" bindtap="tonow">
+                  <view class="weui-cell__bd">
+                      <view class="item-name">{{item.productname}}
+                      </view>
+                  </view>
+              </navigator>
+          </block>
+          </view>
+        </view>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}" wx:key>
+      <swiper-item>
+        <image src="{{item}}" class="slide-image"/>
+      </swiper-item>
+    </block>
+</swiper>
+  <view class="plate">
+    <navigator url="/pages/productList/productList?type=宠物" hover-class="other-navigator-hover" class="plate-item">
+      <view class="plate-img">
+      <image src="../../Images/pet.png"></image>
+      </view>
+      <text class="plate-info">宠物</text>
+    </navigator>
+    <navigator url="/pages/productList/productList?type=家居" hover-class="other-navigator-hover" class="plate-item">
+      <view class="plate-img">
+      <image src="../../Images/house.png"></image>
+      </view>
+      <text class="plate-info">家居</text>
+    </navigator>
+      <navigator url="/pages/productList/productList?type=服装" hover-class="other-navigator-hover" class="plate-item">
+      <view class="plate-img">
+      <image src="../../Images/clothes.png"></image>
+      </view>
+      <text class="plate-info">服装</text>
+    </navigator>
+      <navigator url="/pages/productList/productList?type=图书" hover-class="other-navigator-hover" class="plate-item">
+      <view class="plate-img">
+      <image src="../../Images/book.png"></image>
+      </view>
+      <text class="plate-info">图书</text>
+    </navigator>
+        <navigator url="/pages/productList/productList?type=数码" hover-class="other-navigator-hover" class="plate-item">
+      <view class="plate-img">
+      <image src="../../Images/digitalproducts.png"></image>
+      </view>
+      <text class="plate-info">数码</text>
+    </navigator>
+    <navigator url="/pages/productList/productList?type=运动" hover-class="other-navigator-hover" class="plate-item">
+      <view class="plate-img">
+      <image src="../../Images/sports.png"></image>
+      </view>
+      <text class="plate-info">运动</text>
+    </navigator>
+      <navigator url="/pages/productList/productList?type=育儿" hover-class="other-navigator-hover" class="plate-item">
+      <view class="plate-img">
+      <image src="../../Images/childrearing.png"></image>
+      </view>
+      <text class="plate-info">育儿</text>
+    </navigator>
+      <navigator url="/pages/productList/productList?type=其他" hover-class="other-navigator-hover" class="plate-item">
+      <view class="plate-img">
+      <image src="../../Images/others.png"></image>
+      </view>
+      <text class="plate-info">其他</text>
+         </navigator>
+  </view>
+  <scroll-view scroll-y="true" style="height:100%" bindscrolltolower="getMore" lower-threshold="50">
+    <view wx:for="{{product_list}}" wx:key="id" wx:for-item="product" class="product-item">
+     <navigator url="../product/product" data-productid="{{product.productid}}" data-productname="{{product.productname}}" 
+          data-picture="{{product.picture}}" data-sales="{{product.sales}}" data-volumn="{{product.volumn}}" data-price="{{product.price}}"
+            data-detail="{{product.detail}}"data-shippingprice="{{product.shippingprice}}" open-type="switchTab" bindtap="tonow">
+      <view class="product-img">
+        <image src="{{product.picture}}" class="img-responsive" bindtap="" id="{{product.id}}"></image>
+      </view>
+      <view class="product-meta">
+        <view class="product-name">{{product.productname}}</view>
+        <view class="product-pricedetail">¥{{product.price}}</view>
+        <view class="product-salesdetail">销量：{{product.sales}}</view>
+      </view>
+      </navigator>
+    </view>
+</scroll-view>
+

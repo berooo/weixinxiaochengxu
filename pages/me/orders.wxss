@@ -1,0 +1,38 @@
+/* orders.wxss */
+.swiper-tab{  
+    width: 100%;  
+    border-bottom: 2rpx solid #777777;  
+    text-align: center;  
+    line-height: 80rpx;}  
+.swiper-tab-list{  font-size: 30rpx;  
+    display: inline-block;  
+    width: 25%;  
+    color: #777777;  
+}  
+.on{ color: #da7c0c;  
+    border-bottom: 5rpx solid #da7c0c;}  
+  
+.swiper-box{ display: block; height: 100%; width: 100%; overflow: hidden; }  
+.swiper-box view{  
+    text-align: center;  
+} 
+text {
+  display: block;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 35rpx;
+  margin-left: 20rpx;
+}
+.column{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+   background: #FFE4E1;
+   padding: 50rpx 0;
+}
+.row{
+   display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+

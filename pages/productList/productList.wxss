@@ -1,0 +1,143 @@
+/* productList.wxss */
+
+.filter {
+  display: flex;
+  flex-direction: row;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  font-size: 14px;
+   border-bottom: 1rpx solid silver;  
+}
+
+.filter .picker {
+  display: inline-flex;
+  justify-content: center;
+  width: 187.5rpx;
+}
+
+.filter-expand {
+  position: absolute;
+  top: 60rpx;
+  left: 0;
+  z-index: 20;
+}
+
+.filter-expand .filter-expand-shadow {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.filter-expand .filter-expand-body {
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  background-color: #fff;
+}
+
+.filter-expand .filter-section {
+  clear: both;
+}
+
+.filter-expand .filter-section-title {
+  padding-top: 30rpx;
+  padding-bottom: 20rpx;
+}
+
+.filter-expand .filter-item {
+  float: left;
+  border: 1px solid #aaa;
+  margin: 10rpx 40rpx 10rpx 0;
+  padding: 5rpx 10rpx;
+}
+
+.filter-expand .filter-item.active {
+  border-color: #ea1218;
+}
+
+.filter-expand .filter-op {
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+}
+
+.filter-expand .filter-cancel, .filter-expand .filter-confirm {
+  display: inline-block;
+  border-radius: 5rpx;
+  width: 260rpx;
+  padding: 10rpx 30rpx;
+  text-align: center;
+}
+
+.filter-expand .filter-cancel {
+  background-color: #f2f2f2;
+  border: 1px solid #999;
+  margin-right: 30rpx;
+}
+
+.filter-expand .filter-confirm {
+  background-color: #5db0ff;
+  border: 1px solid #3d93df;
+  color: #fff;
+}
+
+.product-item {
+  position: relative;
+  width: 100%;
+  height: 240rpx;
+  margin-bottom: 10rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+   padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  font-size: 14px;
+}
+
+.product-item .product-img {
+  float: left;
+  width: 240rpx;
+  height: 240rpx;
+}
+
+.product-item .product-meta {
+  position: relative;
+  float: left;
+  width: 400rpx;
+  height: 240rpx;
+  padding-left: 30rpx;
+}
+.img-responsive {
+  max-width: 100%;
+  max-height: 100%;
+}
+.product-item .product-meta .product-name {
+  height: 40rpx;
+  padding-bottom: 20rpx;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+.product-item .product-meta .product-type {
+  float: left;
+  padding-bottom: 20rpx;
+}
+
+.product-item .product-meta .product-pricedetail {
+  float: right;
+  color: #ea1218;
+}
+
+.product-item .product-meta .product-pricedetail {
+  position: absolute;
+  bottom: 0;
+  color: #999;
+}
+.product-salesdetail{
+   position: absolute;
+  bottom: 0;
+  color: #999;
+  left: 120rpx;
+}

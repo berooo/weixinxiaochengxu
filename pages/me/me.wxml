@@ -1,0 +1,58 @@
+<!--me.wxml-->
+<navigator url="usersinfo">
+  <view class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+</navigator>
+
+  <view class="order" bindtap="toOrders" data-mehotd="normal">
+    <view class="orderText">
+    <text class="plate-info-left"> 我的订单</text>
+    <text class="plate-info-right">查看全部订单  ＞</text>
+    </view>
+  </view>
+
+<view class="plate" >
+  <navigator url="" hover-class="other-navigator-hover" class="plate-item">
+      <view class="plate-img" catchtap="toOrders" data-method="pay">
+      <image src="../../Images/waitforpay.png"></image>
+      </view>
+      <text class="plate-info">待付款</text>
+    </navigator>
+ <navigator url="" hover-class="other-navigator-hover" class="plate-item" >
+      <view class="plate-img" catchtap="toOrders" data-method="send">
+      <image src="../../Images/waitforsend.png"></image>
+      </view>
+      <text class="plate-info">待发货</text>
+    </navigator>
+ <navigator url="" hover-class="other-navigator-hover" class="plate-item" >
+      <view class="plate-img" catchtap="toOrders" data-method="receive">
+      <image src="../../Images/waitforreceive.png"></image>
+      </view>
+      <text class="plate-info">待收货</text>
+    </navigator>
+ <navigator url="" hover-class="other-navigator-hover" class="plate-item" >
+      <view class="plate-img" catchtap="toOrders" data-method="comment">
+      <image src="../../Images/waitforcomment.png"></image>
+      </view>
+      <text class="plate-info">待评价</text>
+    </navigator>
+</view>
+<view class="list_top">
+
+<view class="mylist" bindtap="toCollection">
+  <text class="list-item">我的收藏</text>
+  <text class="micon">＞</text>
+</view>
+
+<view class="mylist" bindtap="toViewing">
+  <text class="list-item">浏览记录</text>
+  <text class="micon">＞</text>
+</view>
+
+<view class="mylist" bindtap="toReceiving">
+  <text class="list-item">收货地址</text>
+  <text class="micon">＞</text>
+</view>
+</view>

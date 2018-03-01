@@ -1,0 +1,36 @@
+/* usersinfo.wxss */
+.mylist {
+  background-color:white;
+  height: 80rpx;
+  margin-bottom: 2rpx;   
+}
+.list_top{
+  margin-top: 20rpx;
+}
+.list-item{
+    position: relative;
+  height:40rpx;
+  font-size: 35rpx;
+  font-family: '华文细黑';
+  top:15rpx;
+  left:30rpx;
+}
+.mine_head {
+  width: 100%;
+  box-sizing:border-box;
+  background-color: #F4F4F8;
+  font-size: 30rpx;
+}
+.bottom-border{
+   border-bottom: 1rpx solid silver;  
+}
+.top-border{
+  border-top:3rpx solid silver;
+}
+
+.content{
+
+  font-size: 35rpx;
+ margin-left: 30%;
+  font-family: '微软雅黑';
+}

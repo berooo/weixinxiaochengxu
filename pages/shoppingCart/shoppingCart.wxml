@@ -1,0 +1,40 @@
+<!--shoppingCart.wxml-->
+<view wx:if="{{isnull}}" class="container">
+  <image src="../../Images/cart-null.png" class="cart-image" />
+  <view>{{tipWords}}</view>
+</view>
+<view wx:else>
+  <scroll-view class="scroll" scroll-y="true">
+    <view class="seperate"></view>
+    <view wx:for="{{initial}}">
+      <view class="cart_container" bindtouchstart="mytouchstart" bindtouchend="mytouchend" bindtap="deleteitem" data-index="{{index}}">
+        <image class="item-select" bindtap="switchSelect" data-index="{{index}}" src="{{item.isSelect?'../../Images/selected.png':'../../Images/notselected.png'}}"></image>
+        <image class="item-image" src="{{item.picture}}"></image>
+        <view class="column">
+          <text class="title">{{item.name}}</text>
+          <view class="row">
+            <text class="sku-price">¥{{item.price}}</text>
+            <view class="sku">
+            <view class="stepper">
+              <text class="{{minusStatus}}" bindtap="bindMinus" data-index="{{index}}">-</text>
+              <input type="number" bindchange="bindManual" value="{{item.num}}"  data-index="{{index}}"/>
+              <text class="{{minusStatus}}" bindtap="bindPlus" data-index="{{index}}">+</text>
+            </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="seperate"></view>
+    </view>
+  </scroll-view>
+  <view class="bottom_total">
+    <view class="bottom_line"></view>
+    <view class="row">
+      <image class="item-allselect" bindtap="allSelect" src="{{isAllSelect?'../../Images/selected.png':'../../Images/notselected.png'}}"></image>
+      <text class="small_text">全选</text>
+      <text>合计：¥</text>
+      <text class="price">{{totalMoney}}</text>
+      <button class="button-red" bindtap="tobuy" formType="submit">去结算</button>
+    </view>
+  </view>
+</view>

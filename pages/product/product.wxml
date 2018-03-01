@@ -1,0 +1,61 @@
+<!--product.wxml-->
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}" wx:key>
+    <swiper-item>
+      <image src="{{item}}" data-src="{{item}}" bindtap="previewImage"></image>
+    </swiper-item>
+  </block>
+</swiper>
+<scroll-view scroll-y="true">
+  <view class="detail">
+    <text class="title">{{productname}}</text>
+  </view>
+  <view class="info">
+    <text class="price">¥{{price}}</text>
+    <text class="product-detail">销量：{{sales}}</text>
+    <text class="product-detail">运费：{{shippingprice}}</text>
+  </view>
+
+  <view class="dialog {{showDialog?'dialog--show':''}}">
+    <view class="dialog__mask" bindtap="toggleDialog" />
+    <view class="dialog__container">
+      <view class="row">
+        <image bindtap="closeDialog" class="image-close" src="../../Images/close.png"></image>
+        <image class="image-sku" src="{{picture}}"></image>
+        <view class="column">
+          <text class="sku-price">¥{{price}}</text>
+          <text class="sku-title">库存：{{volumn}}</text>
+          <text class="sku-title">商品编码：{{id}}</text>
+        </view>
+      </view>
+      <text class="seperate"></text>
+      <view class="row">
+        <text class="text">购买数量</text>
+        
+        <view class="stepper"> 
+          <text class="{{minusStatus}}" bindtap="bindMinus">-</text>
+          <input type="number" bindchange="bindManual" value="{{num}}"/>
+          <text class="{{minusStatus}}" bindtap="bindPlus">+</text>
+        </view>
+       
+      </view>
+       <text class="white"></text>
+      <button class="confirm" bindtap="confirm">确定</button>
+    </view> 
+  </view>
+
+  <view class="seperate"></view>
+  <text bindtap="tocomment" class="text" >商品评价</text>
+  <view class="seperate"></view>
+  <text class="text">商品详情</text>
+  <textarea class="textarea">{{detail}} </textarea>
+  <view class="temp"></view>
+</scroll-view>
+<!--底部悬浮栏-->
+<view class="detail-nav">
+  <image bindtap="toCart" src="../../Images/shoppingcart.png" />
+  <view class="line_nav"></view>
+  <image bindtap="addLike" src="{{isLike?'../../Images/collected.png':'../../Images/notcollected.png'}}" />
+  <button class="button-green" bindtap="addCar" formType="submit">加入购物车</button>
+  <button class="button-red" bindtap="immeBuy" formType="submit" >立即购买</button>
+</view>

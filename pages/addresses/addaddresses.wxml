@@ -1,0 +1,39 @@
+<!--addaddresses.wxml-->
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="mine_head">
+<view class="list_top">
+
+<view class="mylist top-border">
+ <view class="row">
+  <text class="list-item">收件人姓名：</text>
+  <input class="content" name="username" placeholder="{{add?'请输入收件人姓名':item.consigneeName}}" />
+  </view>
+</view>
+
+<view class="mylist bottom-border top-border">
+ <view class="row">
+  <text class="list-item">收件人电话：</text>
+  <input class="content" name="telephone" placeholder="{{add?'请输入收件人电话':item.tel}}" />
+  </view>
+</view>
+
+</view>
+<view class="list_top">
+
+<view class="mylist bottom-border top-border">
+<view class="row">
+  <text class="list-item">地址：</text>
+  <input class="content" name="address" placeholder="{{add?'请输入收件人地址':item.address}}" />
+</view>
+</view>
+
+</view>
+</view>
+<view class="bottom_total">
+    <view class="bottom_line"></view>
+    <view class="row">
+    <button class="button-gray" formType="reset">重置</button>
+    <button class="button-red"  formType="submit">提交</button>
+    </view>
+</view>
+</form>

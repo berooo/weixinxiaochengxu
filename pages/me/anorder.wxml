@@ -1,0 +1,63 @@
+<!--anorder.wxml-->
+
+<view class="column">
+  <text>{{item.consigneeName}},{{item.tel}}</text>
+  <text>地址：{{item.address}}</text>
+</view>
+<view class="seperate"></view>
+<scroll-view class="scroll" scroll-y="true">
+
+  <view wx:for="{{initial}}" wx:key>
+    <view wx:if="{{!iscomment}}" class="order_container">
+      
+        <image class="item-image" src="{{item.picture}}"></image>
+        <view class="row" wx:if="{{!iscomment}}">
+          <view class="adjust">
+          <text class="title">{{item.productname}}</text>
+          </view>
+          <view class="adjust">
+          <view class="_column">
+            <text class="sku-price">¥{{item.price}}</text>
+            
+            
+              <text>数量：×{{item.num}}</text>
+            
+            <text>运费：{{item.shippingprice}}</text>
+          </view>
+          </view>
+        </view>
+      
+    </view>
+      <!--     <view class="weui-cell weui-cell_input weui-cell_vcode"> -->
+    <view wx:else class="order_container">
+      <image class="item-image" src="{{item.picture}}"></image>
+      <view class="weui-cell__bd">
+        <view class="columns">
+          <text class="title">{{item.productname}}</text>
+          <text class="sku-price">¥{{item.price}}</text>
+          <text>数量：×{{item.num}}</text>
+        </view>
+      </view>
+      <view class="weui-cell__ft">
+        <view class="weui-vcode-btn" bindtap="toedit" data-productid="{{item.productid}}">评论</view>
+      </view>
+      <!--     </view> -->
+    </view>
+    <view class="seperate"></view>
+  </view>
+</scroll-view>
+<view class="bottom_total">
+  <view wx:if="{{comment}}" class="detail_nav">
+  <view class="_row" wx:if="{{!iscomment}}">
+    <text class="addtexts">总价格：{{total}}</text>
+    <button class="button-red" bindtap="tocomment">去评论</button>
+  </view>
+  <view class="_row" wx:else>
+    <button class="button-gray" bindtap="cancel">取消</button>
+    <button class="button-red">去评论</button>
+  </view>
+  </view>
+  <view wx:else>
+    <text class="addtext">总价格：{{total}}</text>
+  </view>
+</view>

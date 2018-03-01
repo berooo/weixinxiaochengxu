@@ -1,0 +1,26 @@
+<!--addresses.wxml-->
+
+<view class="item" wx:for="{{addressList}}" >
+  <view class="row" bindtouchstart="mytouchstart" bindtouchend="mytouchend" bindtap="deleteAddress" data-conid="{{item.conid}}">
+    <image class="select-image" src="{{selectimg[index]?'../../Images/selected.png':'../../Images/notselected.png'}}" catchtap="selectchange" data-conid="{{item.conid}}" data-name="{{item.consigneeName}}" data-tel="{{item.tel}}" data-address="{{item.address}}"
+      data-index="{{index}}"></image>
+    <view class="column">
+      <text>{{item.consigneeName}},{{item.tel}}</text>
+      <text>地址：{{item.address}}</text>
+    </view>
+    <view class="modify" bindtap="toModifyAddress">
+      <image class="edit-image" src="../../Images/modify.png" catchtap="edit" data-conid="{{item.conid}}" data-name="{{item.consigneeName}}" data-tel="{{item.tel}}" data-address="{{item.address}}"></image>
+    </view>
+
+  </view>
+  <view class='seperate' />
+</view>
+
+
+
+<navigator url="addaddresses?method=add">
+  <view class="bottom_total">
+    <image class="add" src="../../Images/add.png"></image>
+    <text class="addtext">添加收货地址</text>
+  </view>
+</navigator>

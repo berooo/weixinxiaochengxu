@@ -1,0 +1,41 @@
+<!--orders.wxml-->
+<navigator url="../addresses/addresses">
+  <view wx:if="{{!hasaddress}}" class="addaddresses">
+    <image class="add" src="../../Images/choose.png"></image>
+    <text class="addtext">选择收货地址</text>
+  </view>
+  <view wx:else class="_column">
+  <text>{{item.consigneeName}},{{item.tel}}</text>
+  <text>地址：{{item.address}}</text>
+  </view>
+  </navigator>
+<scroll-view class="scroll" scroll-y="true">
+    
+    <view wx:for="{{initial}}" wx:key>
+      <view class="order_container">
+        <image class="item-image" src="{{item.picture}}"></image>
+        <view class="column">
+          <text class="title">{{item.name}}</text>
+          <view class="row">
+            <text class="sku-price">¥{{item.price}}</text>
+            <view class="sku">
+            <view class="stepper">
+              <text>×{{item.num}}</text>
+            </view>
+            <text>运费：{{item.shippingprice}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="seperate"></view>
+    </view>
+  </scroll-view>
+  
+  <view class="bottom_total">
+    <view class="bottom_line"></view>
+    <view class="row">
+      <text>合计：¥</text>
+      <text class="price">{{totalMoney}}</text>
+      <button class="button-red" bindtap="tobuy">去结算</button>
+    </view>
+  </view>

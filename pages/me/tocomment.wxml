@@ -1,0 +1,15 @@
+<!--tocomment.wxml-->
+<form bindsubmit="formSubmit" bindreset="formReset">
+<view class="main-title">
+  <image src = "../../Images/comment.png" />
+  <text>用户评论</text>
+</view>
+<input class="input" name="input" type="text" />
+<view class="bottom_total">
+    <view class="bottom_line"></view>
+    <view class="row">
+    <button class="button-gray" formType="reset">重置</button>
+    <button class="button-red"  formType="submit">提交</button>
+    </view>
+</view>
+</form>

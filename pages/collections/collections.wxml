@@ -1,0 +1,17 @@
+<!--collections.wxml-->
+<scroll-view scroll-y="true" style="height:100%" bindscrolltolower="getMore" lower-threshold="50">
+    <view wx:for="{{product_list}}" wx:key="id" wx:for-item="product" class="product-item">
+    <view  data-productid="{{product.productid}}" data-productname="{{product.productname}}" 
+          data-picture="{{product.picture}}" data-sales="{{product.sales}}" data-volumn="{{product.volumn}}" data-price="{{product.price}}"
+            data-detail="{{product.detail}}"data-shippingprice="{{product.shippingprice}}" open-type="switchTab" bindtap="tonow">
+      <view class="product-img">
+        <image src="{{product.picture}}" class="img-responsive" ></image>
+      </view>
+      <view class="product-meta">
+        <view class="product-name">{{product.productname}}</view>
+        <view class="product-pricedetail">¥{{product.price}}</view>
+        <view class="product-salesdetail">销量：{{product.sales}}</view>
+      </view>
+    </view>
+    </view>
+</scroll-view>

@@ -1,0 +1,147 @@
+/* shoppingCart.wxss */
+page {
+  height: 100%;
+}
+.container {
+  display: flex;
+  height: 100%;
+  align-items: center;/*垂直居中*/
+  justify-content: center;/*水平居中*/
+  background-color: white;
+  color: #707070;
+  font-size: 30rpx;
+}
+.container .cart-image {
+  width: 120px;
+  height: 120px;
+}
+.cart_container {
+  display: flex;
+  flex-direction: row;
+}
+.scroll {
+  margin-bottom: 120rpx;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.sku {
+  margin-top: 60rpx;
+  margin-left: 130rpx;
+}
+.sku-price {
+  color: red;
+  position: relative;
+  margin-top: 70rpx;
+}
+.price {
+  color: red;
+  position: relative;
+}
+.title {
+  font-size: 38rpx;
+  margin-top: 40rpx;
+}
+.small_text {
+  font-size: 28rpx;
+  margin-right: 40rpx;
+  margin-left: 10rpx;
+}
+.item-select {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 90rpx;
+  margin-left: 20rpx;
+}
+.item-allselect {
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 20rpx;
+}
+.item-image {
+  width: 180rpx;
+  height: 180rpx;
+  margin: 20rpx;
+}
+.bottom_line {
+  width: 100%;
+  height: 2rpx;
+  background: lightgray;
+}
+.bottom_total {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  bottom: 0;
+  width: 100%;
+  height: 120rpx;
+  line-height: 120rpx;
+  background: white;
+}
+.button-red {
+  background-color: #f44336; /* 红色 */
+}
+button {
+  position: fixed;
+  right: 0;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  font-size: 30rpx;
+  border-radius: 0rpx;
+  width: 30%;
+  height: 120rpx;
+  line-height: 120rpx;
+}
+.stepper {  
+    width: 80px;  
+    height: 26px;  
+    /*给主容器设一个边框*/  
+    border: 1px solid #ccc;  
+    border-radius: 3px;  
+    margin:0 auto;  
+}  
+  
+/*加号和减号*/  
+.stepper text {  
+    width: 19px;  
+    line-height: 26px;  
+    text-align: center;  
+    float: left;  
+}  
+  
+/*数值*/  
+.stepper input {  
+    width: 40px;  
+    height: 26px;  
+    float: left;  
+    margin: 0 auto;  
+    text-align: center;  
+    font-size: 12px;  
+    /*给中间的input设置左右边框即可*/  
+    border-left: 1px solid #ccc;  
+    border-right: 1px solid #ccc;  
+}  
+  
+/*普通样式*/  
+.stepper .normal{  
+    color: black;  
+}  
+  
+/*禁用样式*/  
+.stepper .disabled{  
+    color: #ccc;  
+}  
+.text {
+  display: block;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 35rpx;
+  margin-left: 20rpx;
+}
